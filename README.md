@@ -2,16 +2,17 @@
 
 # HawkFlow.ai apache airflow integration
 
-1. Sign up to hawkflow for free: https://hawkflow.ai/ and get an API key
+1. First, sign up to hawkflow for free: https://hawkflow.ai/ and get an API key
 2. Install the pip package `pip install hawkflowairflow`
-3. Usage:
+3. Add this to the top of your
+   
 ```python
 from hawkflowairflow import hawkflow_callbacks
 
 hawkflow_callbacks.HF_API_KEY = "YOUR_HAWKFLOW_API_KEY_HERE"
 ```
 
-# add these two lines to default_args in your DAG:
+4. Add these two lines to default_args in your DAG:
 
 ```
 default_args={    
@@ -20,7 +21,7 @@ default_args={
 }
 ``` 
 
-#### When your DAG runs, you will see the output in the HawkFlow UI. https://app.hawkflow.ai/login
+Now when your DAG runs, you will see the output in the HawkFlow UI. https://app.hawkflow.ai/login
 
 ### <span style="color:#D10000">Known Issues</span>
 
