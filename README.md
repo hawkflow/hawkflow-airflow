@@ -2,12 +2,9 @@
 
 # HawkFlow.ai apache airflow integration
 
-#### sign up to hawkflow for free: https://hawkflow.ai/
-
-## Monitoring for anyone that writes code
-
-1. Install the pip package `pip install hawkflowairflow`
-2. Usage:
+1. Sign up to hawkflow for free: https://hawkflow.ai/ and get an API key
+2. Install the pip package `pip install hawkflowairflow`
+3. Usage:
 ```python
 from hawkflowairflow import hawkflow_callbacks
 
