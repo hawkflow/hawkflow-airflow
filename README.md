@@ -4,7 +4,7 @@
 
 1. First, sign up to hawkflow for free: https://hawkflow.ai/ and get an API key
 2. Install the pip package `pip install hawkflowairflow`
-3. Add this to the top of your
+3. Add this to the top of your DAG
    
 ```python
 from hawkflowairflow import hawkflow_callbacks
@@ -21,7 +21,8 @@ default_args={
 }
 ``` 
 
-Now when your DAG runs, you will see the output in the HawkFlow UI. https://app.hawkflow.ai/login
+All done. Now when your DAG runs, you will see the output in the HawkFlow UI. https://app.hawkflow.ai/login
+
 
 ### <span style="color:#D10000">Known Issues</span>
 
@@ -32,8 +33,6 @@ at the top of your DAG. Airflow is running as a different user on your mac, and 
 import os
 os.environ['NO_PROXY'] = '*'
 ```
-
-
 
 ### More examples
 
