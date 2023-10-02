@@ -1,3 +1,5 @@
+import re
+
 from hawkflowclient.hawkflow_api import *
 
 HF_API_KEY = ""
@@ -11,6 +13,11 @@ def hawkflow_success_callback(context):
     send_to_hawkflow('end', context)
 
 
+def remove_date_suffix(s):
+    # This regex matches the pattern __ followed by 8 digits at the end of the string
+    return re.sub(r'__\d{8}$', '', s)
+
+
 def get_process_meta(context):
     # task_instance_key_str will be something like dag_name__task_name__date_string
     original_string = context['task_instance_key_str']
@@ -20,7 +27,8 @@ def get_process_meta(context):
     # and 'meta' parameters to HawFlow. This will get the best details
     # in the HawkFlow UI.
     process = split_string[0]
-    meta = split_string[1]
+    meta_with_date = split_string[1]
+    meta = remove_date_suffix(meta_with_date)
     return process, meta
 
 
